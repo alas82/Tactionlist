@@ -1,0 +1,144 @@
+object Form1: TForm1
+  Left = 239
+  Height = 364
+  Top = 250
+  Width = 592
+  Caption = 'Text Editor'
+  ClientHeight = 364
+  ClientWidth = 592
+  Menu = MainMenu1
+  object Memo1: TMemo
+    Left = 0
+    Height = 364
+    Top = 0
+    Width = 592
+    Align = alClient
+    Lines.Strings = (
+      ''
+    )
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object MainMenu1: TMainMenu
+    Left = 106
+    Top = 37
+    object MenuItem6: TMenuItem
+      Caption = 'File'
+      object MenuItem7: TMenuItem
+        Action = FileOpen1
+      end
+      object MenuItem11: TMenuItem
+        Caption = '-'
+      end
+      object MenuItem12: TMenuItem
+        Caption = 'Save'
+        OnClick = MenuItem12Click
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Edit'
+      object MenuItem2: TMenuItem
+        Action = EditCopy1
+      end
+      object MenuItem3: TMenuItem
+        Action = EditPaste1
+      end
+      object MenuItem4: TMenuItem
+        Action = EditSelectAll1
+      end
+      object MenuItem5: TMenuItem
+        Action = EditDelete1
+      end
+      object MenuItem9: TMenuItem
+        Action = FontEdit1
+      end
+      object MenuItem10: TMenuItem
+        Action = ColorSelect1
+      end
+    end
+    object MenuItem8: TMenuItem
+      Caption = 'About'
+      object MenuItem13: TMenuItem
+        Action = Action1
+        Caption = 'About'
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Left = 168
+    Top = 32
+    object EditCopy1: TEditCopy
+      Category = 'Edit'
+      Caption = '&Copy'
+      Hint = 'Copy'
+      ShortCut = 16451
+    end
+    object EditPaste1: TEditPaste
+      Category = 'Edit'
+      Caption = '&Paste'
+      Hint = 'Paste'
+      ShortCut = 16470
+    end
+    object EditSelectAll1: TEditSelectAll
+      Category = 'Edit'
+      Caption = 'Select &All'
+      Hint = 'Select All'
+      ShortCut = 16449
+    end
+    object EditDelete1: TEditDelete
+      Category = 'Edit'
+      Caption = '&Delete'
+      Hint = 'Delete'
+      ShortCut = 46
+    end
+    object FileOpen1: TFileOpen
+      Category = 'File'
+      Caption = '&Open ...'
+      Dialog.Filter = 'Text files (*.txt)|*.txt'
+      Hint = 'Open'
+      ShortCut = 16463
+      OnAccept = FileOpen1Accept
+    end
+    object FontEdit1: TFontEdit
+      Category = 'Dialog'
+      Caption = 'Select &Font ...'
+      Dialog.MinFontSize = 0
+      Dialog.MaxFontSize = 0
+      Hint = 'Font Select'
+      OnAccept = FontEdit1Accept
+    end
+    object ColorSelect1: TColorSelect
+      Category = 'Dialog'
+      Caption = 'Select &Color ...'
+      Dialog.Color = clBlack
+      Dialog.CustomColors.Strings = (
+        'ColorA=000000'
+        'ColorB=000080'
+        'ColorC=008000'
+        'ColorD=008080'
+        'ColorE=800000'
+        'ColorF=800080'
+        'ColorG=808000'
+        'ColorH=808080'
+        'ColorI=C0C0C0'
+        'ColorJ=0000FF'
+        'ColorK=00FF00'
+        'ColorL=00FFFF'
+        'ColorM=FF0000'
+        'ColorN=FF00FF'
+        'ColorO=FFFF00'
+        'ColorP=FFFFFF'
+        'ColorQ=C0DCC0'
+        'ColorR=F0CAA6'
+        'ColorS=F0FBFF'
+        'ColorT=A4A0A0'
+      )
+      Hint = 'Color Select'
+      OnAccept = ColorSelect1Accept
+    end
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
+    end
+  end
+end
